@@ -1,0 +1,83 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '11.0'
+
+target 'Unity-iPhone' do
+use_frameworks!
+
+pod 'SDWebImage' 
+    # Installing SDWebImage 5.0.6 (was 4.4.2)
+
+    pod 'BDKCollectionIndexView'
+    # Using BDKCollectionIndexView (2.2.2)
+
+    pod 'Gimbal' #, '~> 2.67'
+    # Using Gimbal (2.80.2)
+
+    pod 'Fabric'
+    # Installing Fabric 1.7.13 (was 1.7.9)
+    # Installing Fabric 1.10.2 (was 1.7.13)
+
+    pod 'Crashlytics'
+    # Installing Crashlytics 3.10.9 (was 3.10.5)
+    # Installing Crashlytics 3.13.4 (was 3.10.9)
+
+    pod 'TwitterKit' # '~> 2.8'
+    # Installing TwitterKit 3.4.2 (was 3.4.0)
+
+    pod 'GoogleAds-IMA-iOS-SDK'
+    # Installing GoogleAds-IMA-iOS-SDK 3.9.0 (was 3.7.2)
+
+    pod 'Firebase/Core'
+    pod 'Firebase/AdMob'
+
+    # Installing Firebase 6.3.0 (was 5.5.0)
+    # Installing Firebase 6.4.0 (was 6.3.0)
+
+    # Installing FirebaseAnalytics 6.0.2 (was 5.1.0)
+    # Installing FirebaseAnalytics 6.0.3 (was 6.0.2)
+
+    # Installing FirebaseCore 6.0.3 (was 5.1.0)
+    # Installing FirebaseCore 6.0.4 (was 6.0.3)
+
+    # Installing FirebaseInstanceID 4.2.0 (was 3.2.0)
+    # Installing FirebaseInstanceID 4.2.1 (was 4.2.0)
+
+
+    # Installing Google-Mobile-Ads-SDK 7.45.0 (was 7.31.0)
+    # Installing Google-Mobile-Ads-SDK 7.47.0 (was 7.45.0)
+
+    # Installing GoogleAppMeasurement 6.0.2 (was 5.1.0)
+    # Installing GoogleAppMeasurement 6.0.3 (was 6.0.2)
+
+    # Installing GoogleUtilities 6.2.0 (was 5.2.2)
+    # Installing GoogleUtilities 6.2.3 (was 6.2.0)
+
+    # Installing nanopb 0.3.901 (was 0.3.8)
+
+    pod 'Facebook-iOS-SDK'
+    # Installing FBSDKCoreKit (5.0.0)
+    # Installing FBSDKMarketingKit (5.0.0)
+    # Installing Facebook-iOS-SDK 4.38.0 (was 4.35.0)
+
+    pod 'SWXMLHash' #, '~> 4.0.0'
+    # June 19, 2019
+    # Installing SWXMLHash 4.9.0 (was 4.0.0)
+
+    pod 'AFNetworking'
+    # Installing AFNetworking (3.2.1)
+
+    # Pods for Unity-iPhone
+
+    target 'Unity-iPhone Tests' do
+    inherit! :search_paths
+        # Pods for testing
+      end
+    end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.0'
+        end
+    end
+end
